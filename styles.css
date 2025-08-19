@@ -1,0 +1,302 @@
+/* إعادة تعيين الأنماط الأساسية */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cairo', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    direction: rtl;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+}
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* رأس التطبيق */
+.app-header {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.app-title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    flex: 1;
+    margin: 0 1rem;
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+    flex: 1;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.order-form {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    backdrop-filter: blur(10px);
+}
+
+/* أقسام النموذج */
+.form-section {
+    margin-bottom: 2rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.8rem;
+    text-align: right;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Cairo', 'Arial', sans-serif;
+    text-align: right;
+    direction: rtl;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-input::placeholder {
+    color: #adb5bd;
+    font-style: italic;
+}
+
+/* شبكة الخيارات */
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.option-btn {
+    background: white;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    padding: 1rem 0.5rem;
+    font-size: 0.9rem;
+    font-family: 'Cairo', 'Arial', sans-serif;
+    color: #495057;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 500;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.option-btn:hover {
+    border-color: #667eea;
+    background: #f8f9ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.option-btn.selected {
+    background: #667eea;
+    border-color: #667eea;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.option-btn.single-item {
+    grid-column: 2;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* الرسائل */
+.message {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.hidden {
+    display: none;
+}
+
+/* زر الإرسال */
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-family: 'Cairo', 'Arial', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(40, 167, 69, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem 0.5rem;
+    }
+    
+    .order-form {
+        padding: 1.5rem;
+        margin: 0 0.5rem;
+    }
+    
+    .app-title {
+        font-size: 1.2rem;
+    }
+    
+    .options-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+    
+    .option-btn.single-item {
+        grid-column: 1 / -1;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    
+    .option-btn {
+        padding: 0.8rem 0.3rem;
+        font-size: 0.8rem;
+        min-height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .options-grid {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+    
+    .option-btn.single-item {
+        grid-column: 1;
+    }
+    
+    .app-header {
+        padding: 0.8rem;
+    }
+    
+    .menu-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* تأثيرات إضافية */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.order-form {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.option-btn {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.option-btn:nth-child(1) { animation-delay: 0.1s; }
+.option-btn:nth-child(2) { animation-delay: 0.2s; }
+.option-btn:nth-child(3) { animation-delay: 0.3s; }
+.option-btn:nth-child(4) { animation-delay: 0.4s; }
+.option-btn:nth-child(5) { animation-delay: 0.5s; }
+.option-btn:nth-child(6) { animation-delay: 0.6s; }
+.option-btn:nth-child(7) { animation-delay: 0.7s; }
